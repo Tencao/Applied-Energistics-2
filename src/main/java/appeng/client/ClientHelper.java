@@ -62,7 +62,6 @@ import appeng.core.CommonHelper;
 import appeng.core.sync.network.NetworkHandler;
 import appeng.core.sync.packets.PacketAssemblerAnimation;
 import appeng.core.sync.packets.PacketValueConfig;
-import appeng.coremod.MissingCoreMod;
 import appeng.entity.EntityFloatingItem;
 import appeng.entity.EntityTinyTNTPrimed;
 import appeng.entity.RenderFloatingItem;
@@ -240,13 +239,6 @@ public class ClientHelper extends ServerHelper
 
 		mc.theWorld.markBlockRangeForRenderUpdate( x - range, y - range, z - range, x + range, y + range, z + range );
 	}
-
-	@Override
-	public void missingCoreMod()
-	{
-		throw new MissingCoreMod();
-	}
-
 	@SubscribeEvent
 	public void postPlayerRender( final RenderLivingEvent.Pre p )
 	{

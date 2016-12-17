@@ -24,12 +24,12 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Nonnull;
 
+import appeng.integration.IntegrationType;
 import com.google.common.base.Stopwatch;
 import com.google.common.collect.Lists;
 
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.FMLCommonHandler;
-import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -126,12 +126,12 @@ public final class AppEng
 	@EventHandler
 	private void preInit( final FMLPreInitializationEvent event )
 	{
-		if( !Loader.isModLoaded( "appliedenergistics2-core" ) )
-		{
-			CommonHelper.proxy.missingCoreMod();
+		final Stopwatch watch = Stopwatch.createStarted();
+
+		for (final IntegrationType type : IntegrationType.values()){
+			IntegrationRegistry.INSTANCE.add(type);
 		}
 
-		final Stopwatch watch = Stopwatch.createStarted();
 		this.configDirectory = new File( event.getModConfigurationDirectory().getPath(), "AppliedEnergistics2" );
 		this.recipeDirectory = new File( this.configDirectory, "recipes" );
 
