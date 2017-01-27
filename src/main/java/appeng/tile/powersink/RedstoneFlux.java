@@ -27,7 +27,7 @@ import appeng.api.config.PowerUnits;
 import net.minecraftforge.fml.common.Optional;
 
 
-@Optional.Interface( iface = "cofh.api.energy.IEnergyReceiver", modid = "CoFHAPI", striprefs = true )
+@Optional.Interface( iface = "cofh.api.energy.IEnergyReceiver", modid = "CoFHAPI", striprefs = true  )
 public abstract class RedstoneFlux extends AERootPoweredTile implements IEnergyReceiver
 {
 	@Override

@@ -31,6 +31,7 @@ import com.google.common.collect.Lists;
 
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.FMLCommonHandler;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -128,7 +129,6 @@ public final class AppEng
 	private void preInit( final FMLPreInitializationEvent event )
 	{
 		final Stopwatch watch = Stopwatch.createStarted();
-
 		for (final IntegrationType type : IntegrationType.values()){
 			IntegrationRegistry.INSTANCE.add(type);
 		}

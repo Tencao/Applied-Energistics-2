@@ -239,6 +239,7 @@ public class ClientHelper extends ServerHelper
 
 		mc.theWorld.markBlockRangeForRenderUpdate( x - range, y - range, z - range, x + range, y + range, z + range );
 	}
+
 	@SubscribeEvent
 	public void postPlayerRender( final RenderLivingEvent.Pre p )
 	{

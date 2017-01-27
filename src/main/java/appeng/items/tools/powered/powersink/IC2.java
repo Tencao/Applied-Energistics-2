@@ -26,7 +26,6 @@ import ic2.api.item.IElectricItemManager;
 import ic2.api.item.ISpecialElectricItem;
 
 import appeng.api.config.PowerUnits;
-import appeng.integration.IntegrationType;
 import net.minecraftforge.fml.common.Optional;
 
 
